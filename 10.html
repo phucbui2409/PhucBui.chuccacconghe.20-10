@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời chúc 20/10 💌 - Gửi tặng các bạn nữ</title>
+    <meta name="description" content="💐 Website nhỏ gửi tặng lời chúc 20/10 đến các bạn nữ trong lớp. Chúc các bạn luôn xinh đẹp, hạnh phúc và thành công! 💝">
+    <meta name="keywords" content="20/10, lời chúc, phụ nữ Việt Nam, quà tặng, website lớp, HTML, lời chúc 20/10">
+    <meta name="author" content="Quoc Tin Ly Tran ❤️">
+    <meta name="theme-color" content="#ff8fab">
+    <meta property="og:title" content="💌 Lời chúc 20/10 💌 - Gửi tặng các bạn nữ lớp mình">
+    <meta property="og:description" content="Một món quà nhỏ dành cho các bạn nữ nhân ngày 20/10 — Chúc các bạn luôn xinh đẹp, học giỏi và tràn đầy niềm vui! 🌸">
+    <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/4206/4206277.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://quoctin.pythonanywhere.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lời chúc 20/10 💝">
+    <meta name="twitter:description" content="Một website nhỏ tặng lời chúc dễ thương cho các bạn nữ ngày 20/10 🌷">
+    <meta name="twitter:image" content="https://cdn-icons-png.flaticon.com/512/4206/4206277.png">
+
+    <link rel="icon" href="20-10.mp3" type="image/mp3">
+</head>
+<body>
+    <div class="container">
+    	<h1>💌 Lời chúc 20/10 💌</h1>
+    	<input type="text" id="nameInput" placeholder="Nhập tên của bạn..." />
+    	<button onclick="showWish()">Nhận lời chúc 💝</button>
+    	<div id="wish" class="hidden"></div>
+  	</div>
+
+  	<audio id="bgMusic" src="20-10.mp3" loop></audio>
+</body>
+</html>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+  	font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    min-width: 100vw;
+  	background: linear-gradient(180deg, #ffd6ec, #ffe6f7);
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+  	overflow-y: auto;
+  	position: relative;
+}
+
+.container {
+  	text-align: center;
+  	background: rgba(255, 255, 255, 0.85);
+  	padding: 40px 30px;
+  	border-radius: 20px;
+  	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  	width: 100%;
+  	max-width: 600px;
+  	margin-top: 60px;
+  	margin-bottom: 60px;
+}
+
+h1 {
+  	color: #ff4da6;
+  	margin-bottom: 10px;
+}
+
+input {
+  	padding: 10px;
+  	border: 2px solid #ff80bf;
+  	border-radius: 10px;
+  	outline: none;
+  	width: 80%;
+  	margin: 10px 0;
+  	font-size: 16px;
+}
+
+button {
+  	padding: 10px 25px;
+  	border: none;
+  	background-color: #ff80bf;
+  	color: white;
+  	font-weight: bold;
+  	border-radius: 10px;
+  	cursor: pointer;
+  	transition: background 0.3s ease;
+}
+
+button:hover {
+  	background-color: #ff4da6;
+}
+
+#wish {
+  	margin-top: 25px;
+  	font-size: 18px;
+  	color: #ff4da6;
+  	font-weight: 500;
+  	line-height: 1.6;
+  	white-space: pre-wrap;
+  	text-align: left;
+}
+
+.hidden {
+  	display: none;
+}
+
+@keyframes fall {
+  	0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  	100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.flower, .heart {
+  	position: absolute;
+  	top: -10px;
+  	width: 20px;
+  	height: 20px;
+  	animation: fall linear forwards;
+  	opacity: 0.8;
+}
+
+.flower {
+  	background: url('https://cdn-icons-png.flaticon.com/512/888/888859.png') no-repeat center/contain;
+}
+
+.heart {
+  	background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
+}
+</style>
+<script>
+function showWish() {
+  const name = document.getElementById("nameInput").value.trim();
+  const wishBox = document.getElementById("wish");
+  if (name === "") {
+    alert("Hãy nhập tên của bạn nhé 💖");
+    return;
+  }
+
+  const wishLines = [
+    `Xin chào bạn ${name} 🌷,\n\n`,
+    "Sắp tới là ngày đặc biệt – ngày để tôn vinh một nửa thế giới tuyệt vời này 💖.\n\n",
+    "Chúc bạn – người con gái dịu dàng, xinh đẹp và mạnh mẽ – luôn tươi cười như ánh nắng ban mai,luôn tự tin tỏa sáng dù ở bất cứ nơi đâu 🌞.\n\n",
+    "Mong rằng cuộc sống của bạn sẽ luôn rực rỡ như những đóa hoa mùa xuân 🌸,ngọt ngào như hương mật ong và bình yên như một bản nhạc lofi dịu nhẹ giữa đêm khuya 🌙.\n\n",
+    "Dù mai này có bận rộn, có những lúc mỏi mệt,hãy nhớ rằng bạn luôn xứng đáng được yêu thương,được trân trọng và được hạnh phúc – không chỉ dịp này mà là mỗi ngày trong suốt cuộc đời này 💕.\n\n",
+    "Cảm ơn bạn đã mang đến thế giới này những điều đẹp đẽ,những nụ cười và sự dịu dàng hiếm có 🌼.\n\n",
+    `Chúc ${name} một ngày 20/10 thật trọn vẹn,ngập tràn yêu thương, tiếng cười và những điều kỳ diệu nhất trên thế gian này 💐💫.`
+  ];
+
+  wishBox.innerHTML = "";
+  wishBox.classList.remove("hidden");
+  playMusic();
+  createFallingElements();
+  typeText(wishBox, wishLines);
+}
+
+function typeText(element, lines, delay = 50) {
+  let lineIndex = 0;
+  let charIndex = 0;
+  let text = "";
+
+  function type() {
+    if (lineIndex < lines.length) {
+      if (charIndex < lines[lineIndex].length) {
+        text += lines[lineIndex][charIndex];
+        element.innerHTML = text.replace(/\n/g, "<br>");
+        charIndex++;
+        setTimeout(type, delay);
+      } else {
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(type, 400);
+      }
+    }
+  }
+  type();
+}
+
+function playMusic() {
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.5;
+  music.play().catch(() => {});
+}
+
+function createFallingElements() {
+  setInterval(() => {
+    const el = document.createElement("div");
+    el.classList.add(Math.random() > 0.5 ? "flower" : "heart");
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.animationDuration = (6 + Math.random() * 5) + "s";
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 11000);
+  }, 800);
+}
+</script>
